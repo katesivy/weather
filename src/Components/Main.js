@@ -43,14 +43,15 @@ export default function Main() {
 
     return (
         <>
+        <div className="container">
             <div className="card text-center">
                 <div className="card-header display-4">
                     Today's Weather
                  </div>
                 <div className="card-body text-center">
-                    <h5 className="card-title">Enter your zip code</h5>
+                    <h5 className="card-title text-center">Enter your zip code</h5>
                     <form onSubmit={getWeather}>
-                        <div className="form-group col-2 offset-5">
+                        <div className="form-group col-lg-2 col-sm-12 offset-sm-0 text-center offset-lg-5">
                             <label htmlFor="zipCode"></label>
                             <input onChange={(e) => setZip(e.target.value)} type="input" className="form-control text-center" id="zipCode" placeholder="zip code"></input>
                             <button type="submit" className="btn btn-primary">Submit</button>
@@ -63,21 +64,27 @@ export default function Main() {
                 <div className="card-body">
             
                     <div className="card-header">
-                        <h5 className="card-subtitle mb-2 text-muted">City: {city}</h5>
+                        <h5 className="card-subtitle mb-2 text-muted">City: </h5>
+                        <h5 className="text-primary"> {city}</h5>
                     </div>
                     <div className="card-header">
-                        <h5 className="card-subtitle mb-2 text-muted">Temperature: {farenheit}</h5>
+                        <h5 className="card-subtitle mb-2 text-muted">Temperature:</h5>
+                        <h5 className="text-primary"> {farenheit}</h5>
                     </div>
                     <div className="card-header">
-                        <h5 className="card-subtitle mb-2 text-muted">Feels like: {feels}</h5>
+                        <h5 className="card-subtitle mb-2 text-muted">Feels like:</h5>
+                        <h5 className="text-primary">  {feels}</h5>
                     </div>
                     <div className="card-header">
-                        <h5 className="card-subtitle mb-2 text-muted">Condition: {condition}</h5>
+                        <h5 className="card-subtitle mb-2 text-muted">Condition:</h5>
+                        <h5 className="text-primary">  {condition}</h5>
                     </div>
-                    <img src={icon}></img>
+                    <img className=" " src={icon}></img>
+                   
 
 
                 </div>
+            </div>
             </div>
         </>
     )
